@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tektonlabs.Ecommerce.Application.DTO\Tektonlabs.Ecommerce.Application.DTO.csproj" />
+    <ProjectReference Include="..\Tektonlabs.Ecommerce.Common\Tektonlabs.Ecommerce.Common.csproj" />
+    <ProjectReference Include="..\Tektonlabs.Ecommerce.Domain\Tektonlabs.Ecommerce.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+@Tektonlabs.Ecommerce.WebApi_HostAddress = http://localhost:5298
+
+GET {{Tektonlabs.Ecommerce.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,105 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{EDB7BCFF-6E56-4B35-8C0E-782493AA3558}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A29DC7D2-F032-41B5-A75D-5D3906F2E6B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6C99854B-459F-462A-B570-C620D5E9ECF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{03710840-E8A8-40D8-98F7-1222EB5C78F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E6CD8C41-30FD-44E7-BCDC-AAA8FC38BB8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5B31523B-4246-4BCF-8EEE-069428FC8057}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0E3D7B47-6B0B-4D30-924D-E8C0C68407F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{80E46065-5EEA-4309-9471-41BD558F74DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Application.DTO", "Tektonlabs.Ecommerce.Application.DTO\Tektonlabs.Ecommerce.Application.DTO.csproj", "{0AB8CDF9-4552-41CC-A6D4-64F5E483BA44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Application.Interface", "Tektonlabs.Ecommerce.Application.Interface\Tektonlabs.Ecommerce.Application.Interface.csproj", "{6BECA952-337A-482C-8EE2-D464F0ADE402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Application.UseCases", "Tektonlabs.Ecommerce.Application.UseCases\Tektonlabs.Ecommerce.Application.UseCases.csproj", "{9C411452-599D-4EDF-BB39-97A77E0F59CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Application.Validator", "Tektonlabs.Ecommerce.Application.Validator\Tektonlabs.Ecommerce.Application.Validator.csproj", "{7D440B81-6F8F-4FC5-8E2E-7AD7F8F1A79E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Domain", "Tektonlabs.Ecommerce.Domain\Tektonlabs.Ecommerce.Domain.csproj", "{132D33B7-5730-45E9-8127-A4B94A63D432}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Infrastructure", "Tektonlabs.Ecommerce.Infrastructure\Tektonlabs.Ecommerce.Infrastructure.csproj", "{29C98151-6B08-45DD-9286-33AB00E88EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Persistence", "Tektonlabs.Ecommerce.Persistence\Tektonlabs.Ecommerce.Persistence.csproj", "{25722DA6-9586-43FA-B7B5-B1720DE7FA81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Common", "Tektonlabs.Ecommerce.Common\Tektonlabs.Ecommerce.Common.csproj", "{67DF5D05-EB9E-4E08-8776-966E28D53150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.WebApi", "Tektonlabs.Ecommerce.WebApi\Tektonlabs.Ecommerce.WebApi.csproj", "{B7D53BCB-E918-4AD5-984A-DB2846F7B160}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AB8CDF9-4552-41CC-A6D4-64F5E483BA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB8CDF9-4552-41CC-A6D4-64F5E483BA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB8CDF9-4552-41CC-A6D4-64F5E483BA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB8CDF9-4552-41CC-A6D4-64F5E483BA44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BECA952-337A-482C-8EE2-D464F0ADE402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BECA952-337A-482C-8EE2-D464F0ADE402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BECA952-337A-482C-8EE2-D464F0ADE402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BECA952-337A-482C-8EE2-D464F0ADE402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C411452-599D-4EDF-BB39-97A77E0F59CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C411452-599D-4EDF-BB39-97A77E0F59CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C411452-599D-4EDF-BB39-97A77E0F59CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C411452-599D-4EDF-BB39-97A77E0F59CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D440B81-6F8F-4FC5-8E2E-7AD7F8F1A79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D440B81-6F8F-4FC5-8E2E-7AD7F8F1A79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D440B81-6F8F-4FC5-8E2E-7AD7F8F1A79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D440B81-6F8F-4FC5-8E2E-7AD7F8F1A79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{132D33B7-5730-45E9-8127-A4B94A63D432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132D33B7-5730-45E9-8127-A4B94A63D432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132D33B7-5730-45E9-8127-A4B94A63D432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132D33B7-5730-45E9-8127-A4B94A63D432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C98151-6B08-45DD-9286-33AB00E88EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C98151-6B08-45DD-9286-33AB00E88EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C98151-6B08-45DD-9286-33AB00E88EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C98151-6B08-45DD-9286-33AB00E88EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25722DA6-9586-43FA-B7B5-B1720DE7FA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25722DA6-9586-43FA-B7B5-B1720DE7FA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25722DA6-9586-43FA-B7B5-B1720DE7FA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25722DA6-9586-43FA-B7B5-B1720DE7FA81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67DF5D05-EB9E-4E08-8776-966E28D53150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DF5D05-EB9E-4E08-8776-966E28D53150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DF5D05-EB9E-4E08-8776-966E28D53150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DF5D05-EB9E-4E08-8776-966E28D53150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D53BCB-E918-4AD5-984A-DB2846F7B160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D53BCB-E918-4AD5-984A-DB2846F7B160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D53BCB-E918-4AD5-984A-DB2846F7B160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D53BCB-E918-4AD5-984A-DB2846F7B160}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03710840-E8A8-40D8-98F7-1222EB5C78F2} = {A29DC7D2-F032-41B5-A75D-5D3906F2E6B6}
+		{E6CD8C41-30FD-44E7-BCDC-AAA8FC38BB8C} = {A29DC7D2-F032-41B5-A75D-5D3906F2E6B6}
+		{5B31523B-4246-4BCF-8EEE-069428FC8057} = {A29DC7D2-F032-41B5-A75D-5D3906F2E6B6}
+		{0E3D7B47-6B0B-4D30-924D-E8C0C68407F5} = {A29DC7D2-F032-41B5-A75D-5D3906F2E6B6}
+		{80E46065-5EEA-4309-9471-41BD558F74DD} = {A29DC7D2-F032-41B5-A75D-5D3906F2E6B6}
+		{0AB8CDF9-4552-41CC-A6D4-64F5E483BA44} = {03710840-E8A8-40D8-98F7-1222EB5C78F2}
+		{6BECA952-337A-482C-8EE2-D464F0ADE402} = {03710840-E8A8-40D8-98F7-1222EB5C78F2}
+		{9C411452-599D-4EDF-BB39-97A77E0F59CE} = {03710840-E8A8-40D8-98F7-1222EB5C78F2}
+		{7D440B81-6F8F-4FC5-8E2E-7AD7F8F1A79E} = {03710840-E8A8-40D8-98F7-1222EB5C78F2}
+		{132D33B7-5730-45E9-8127-A4B94A63D432} = {E6CD8C41-30FD-44E7-BCDC-AAA8FC38BB8C}
+		{29C98151-6B08-45DD-9286-33AB00E88EAA} = {5B31523B-4246-4BCF-8EEE-069428FC8057}
+		{25722DA6-9586-43FA-B7B5-B1720DE7FA81} = {5B31523B-4246-4BCF-8EEE-069428FC8057}
+		{67DF5D05-EB9E-4E08-8776-966E28D53150} = {0E3D7B47-6B0B-4D30-924D-E8C0C68407F5}
+		{B7D53BCB-E918-4AD5-984A-DB2846F7B160} = {80E46065-5EEA-4309-9471-41BD558F74DD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCA6E22E-F383-4143-913A-B1B242CD89DD}
+	EndGlobalSection
+EndGlobal
