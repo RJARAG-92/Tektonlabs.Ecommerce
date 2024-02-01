@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Net;
 using System.Text.Json;
 using Tektonlabs.Ecommerce.Common;
 
@@ -34,6 +36,7 @@ namespace Tektonlabs.Ecommerce.WebApi.Modules.GlobalException
 
                 await JsonSerializer.SerializeAsync(context.Response.Body, response);
             }
+             
         }
     }
 }

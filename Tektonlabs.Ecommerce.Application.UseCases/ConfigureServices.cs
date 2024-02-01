@@ -1,7 +1,9 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Tektonlabs.Ecommerce.Application.UseCases.Common.Behaviours;
+using Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProductCommand;
 using Tektonlabs.Ecommerce.Application.Validator;
 
 namespace Tektonlabs.Ecommerce.Application.UseCases
@@ -15,9 +17,9 @@ namespace Tektonlabs.Ecommerce.Application.UseCases
                 cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
             });
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            //services.AddScoped<ICustomersApplication, CustomersApplication>(); 
-
-            services.AddTransient<ProductsDtoValidator>();
+            //services.AddScoped<ICustomersApplication, CustomersApplication>();  
+            //services.AddTransient<ProductsDtoValidator>(); 
+            services.AddTransient<CreateProductValidator>();
 
             return services;
         }

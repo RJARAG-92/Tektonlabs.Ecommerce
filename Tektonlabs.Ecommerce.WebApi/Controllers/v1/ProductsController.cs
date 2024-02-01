@@ -3,7 +3,9 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Threading;
 using Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProductCommand;
+using Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQuery;
 using Tektonlabs.Ecommerce.Common;
 
 namespace Tektonlabs.Ecommerce.WebApi.Controllers.v1
@@ -19,15 +21,15 @@ namespace Tektonlabs.Ecommerce.WebApi.Controllers.v1
         }
 
         [HttpPost("Insert")]
-        [SwaggerOperation(
-            Summary = "Nuevo Producto",
-            Description = "This endpoint will return all categories",
-            OperationId = "Insert",
-            Tags = new string[] { "Insert" })]
+        //[SwaggerOperation(
+        //    Summary = "Nuevo Producto",
+        //    Description = "This endpoint will return all categories",
+        //    OperationId = "Insert",
+        //    Tags = new string[] { "Insert" })]
         //[SwaggerResponse(200, "Nuevo", typeof(Response<IEnumerable<CategoryDto>>))]
         //[SwaggerResponse(404, "Notfound Categories")]
         public async Task<IActionResult> Insert([FromBody] CreateProductCommand command)
-        {
+        { 
             if (command == null)
                 return BadRequest();
             var response = await _mediator.Send(command);
@@ -51,16 +53,14 @@ namespace Tektonlabs.Ecommerce.WebApi.Controllers.v1
 
         //    return BadRequest(response.Message);
         //}
-        //[HttpGet("Get/{customerId}")]
-        //public async Task<IActionResult> Get([FromRoute] string customerId)
-        //{
-        //    if (string.IsNullOrEmpty(customerId))
-        //        return BadRequest();
-        //    var response = await _mediator.Send(new GetCustomerQuery() { CustomerId = customerId });
-        //    if (response.IsSuccess)
-        //        return Ok(response);
+        [HttpGet("{customerId}")]
+        public async Task<IActionResult> Get([FromRoute] int customerId)
+        { 
+            var response = await _mediator.Send(new GetProductQuery(customerId));
+            if (response.IsSuccess)
+                return Ok(response);
 
-        //    return BadRequest(response.Message);
-        //}
+            return BadRequest(response.Message);
+        }
     }
 }

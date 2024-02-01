@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <Folder Include="Products\Commands\UpdateProductCommand\" />
-    <Folder Include="Products\Queries\GetProductQuery\" />
   </ItemGroup>
 
   <ItemGroup>
