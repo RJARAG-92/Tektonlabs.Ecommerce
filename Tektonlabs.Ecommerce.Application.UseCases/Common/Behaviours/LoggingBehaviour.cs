@@ -17,9 +17,9 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Common.Behaviours
         {
 
             _logger.LogInformation("Request Handling Start: {name} {@request}. {@Date}", typeof(TRequest).Name, JsonSerializer.Serialize(request), DateTime.UtcNow);
-            
+
             var response = await next();
-            
+
             _logger.LogInformation("Response Handling Finish: {name} {@response}. {@Date}", typeof(TRequest).Name, JsonSerializer.Serialize(response), DateTime.UtcNow);
 
             return response;

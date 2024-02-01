@@ -1,12 +1,12 @@
 using Asp.Versioning.ApiExplorer;
 using Tektonlabs.Ecommerce.Application.UseCases;
-using Tektonlabs.Ecommerce.Persistence;
+using Tektonlabs.Ecommerce.Persistencia;
 using Tektonlabs.Ecommerce.WebApi.Modules.Feature;
 using Tektonlabs.Ecommerce.WebApi.Modules.Injection;
 using Tektonlabs.Ecommerce.WebApi.Modules.Middleware;
 using Tektonlabs.Ecommerce.WebApi.Modules.Swagger;
 using Tektonlabs.Ecommerce.WebApi.Modules.Versioning;
-using Serilog; 
+using Serilog;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddFeature(builder.Configuration);
-builder.Services.AddPersistenceServices();
+builder.Services.AddPersistenceServices(builder.Configuration); 
+
 //builder.Services.AddInfrastructureServices();
 builder.Services.AddApplicationServices();
 builder.Services.AddInjection(builder.Configuration);
@@ -58,8 +59,9 @@ app.UseCors("policyApiEcommerce");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+app.AddMiddleware();
 // Allow httprequest logs in Serilog
 app.UseSerilogRequestLogging();
-app.AddMiddleware();
 
 app.Run();

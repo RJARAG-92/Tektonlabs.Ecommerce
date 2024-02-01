@@ -23,6 +23,7 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQ
 
             var product = await _unitOfWork.Products.GetAsync(request.ProductId);
             response.Data = _mapper.Map<ProductDto>(product);
+            response.Message = "Elemento no encontrado!!!";
             if (response.Data != null)
             {
                 response.IsSuccess = true;

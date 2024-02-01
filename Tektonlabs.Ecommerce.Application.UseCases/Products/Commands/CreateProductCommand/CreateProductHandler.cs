@@ -1,14 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tektonlabs.Ecommerce.Application.DTO;
 using Tektonlabs.Ecommerce.Application.Interface.Persistence;
-using Tektonlabs.Ecommerce.Application.Validator;
 using Tektonlabs.Ecommerce.Common;
 using Tektonlabs.Ecommerce.Domain.Entities;
 
@@ -17,7 +10,6 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProd
     public class CreateProductHandler : IRequestHandler<CreateProductCommand, Response<bool>>
     {
         private readonly IMapper _mapper;
-        //private readonly IProductsRepository _productsRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly CreateProductValidator _validator;
 

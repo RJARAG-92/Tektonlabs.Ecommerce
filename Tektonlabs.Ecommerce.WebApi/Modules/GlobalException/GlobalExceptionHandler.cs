@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Net;
+﻿using System.Net;
 using System.Text.Json;
 using Tektonlabs.Ecommerce.Common;
 

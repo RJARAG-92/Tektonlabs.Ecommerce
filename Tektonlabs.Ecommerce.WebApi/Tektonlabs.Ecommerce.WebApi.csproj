@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+	<InvariantGlobalization>false</InvariantGlobalization>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
@@ -28,7 +28,7 @@
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Common\Tektonlabs.Ecommerce.Common.csproj" />
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Domain\Tektonlabs.Ecommerce.Domain.csproj" />
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Infrastructure\Tektonlabs.Ecommerce.Infrastructure.csproj" />
-    <ProjectReference Include="..\Tektonlabs.Ecommerce.Persistence\Tektonlabs.Ecommerce.Persistence.csproj" />
+    <ProjectReference Include="..\Tektonlabs.Ecommerce.Persistencia\Tektonlabs.Ecommerce.Persistencia.csproj" />
   </ItemGroup>
 
 </Project>

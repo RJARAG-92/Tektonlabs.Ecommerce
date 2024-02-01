@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Common\" />
+    <Folder Include="Enums\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tektonlabs.Ecommerce.Common\Tektonlabs.Ecommerce.Common.csproj" />
   </ItemGroup>
 
 </Project>

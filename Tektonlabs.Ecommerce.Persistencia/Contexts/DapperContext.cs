@@ -1,9 +1,13 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
-
-namespace Tektonlabs.Ecommerce.Persistence.Contexts
+namespace Tektonlabs.Ecommerce.Persistencia.Contexts
 {
     public class DapperContext
     {
@@ -19,3 +23,4 @@ namespace Tektonlabs.Ecommerce.Persistence.Contexts
         public IDbConnection CreateConnection() => new SqlConnection(_connectionString);
     }
 }
+
