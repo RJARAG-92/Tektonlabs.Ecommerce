@@ -6,7 +6,7 @@ namespace Tektonlabs.Ecommerce.Application.DTO
     {
        public int ProductId { get; set; }
         public string Name { get; set; } = string.Empty;
-        public ProductStatus StatusId { get; set; }
+        public int StatusId { get; set; }
         public string StatusName { get; set; } = string.Empty;
         public TipoUnidadMedida UnidadMedida { get; set; }
         public int Stock { get; set; }
@@ -14,9 +14,7 @@ namespace Tektonlabs.Ecommerce.Application.DTO
         public TipoMoneda Moneda { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; } = 0;
+        public decimal DiscountAmount { get { return Price * Discount / 100; } }
         public decimal FinalPrice { get { return Price * (100 - Discount) / 100; } }
-
-
-
     }
 }

@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Application.DTO\Tektonlabs.Ecommerce.Application.DTO.csproj" />
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Application.Interface\Tektonlabs.Ecommerce.Application.Interface.csproj" />
-    <ProjectReference Include="..\Tektonlabs.Ecommerce.Application.Validator\Tektonlabs.Ecommerce.Application.Validator.csproj" />
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Common\Tektonlabs.Ecommerce.Common.csproj" />
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Domain\Tektonlabs.Ecommerce.Domain.csproj" />
   </ItemGroup>
@@ -17,6 +16,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="LazyCache" Version="2.4.0" />
     <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
   </ItemGroup>

@@ -13,7 +13,7 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.UpdateProd
     {
         public int ProductId { get; set; } 
         public string Name { get; set; } = string.Empty;
-        public ProductStatus StatusId { get; set; }
+        public ProductStatus Status { get; set; }
         public TipoUnidadMedida UnidadMedida { get; set; }
         public int Stock { get; set; }
         public TipoMoneda Moneda { get; set; }

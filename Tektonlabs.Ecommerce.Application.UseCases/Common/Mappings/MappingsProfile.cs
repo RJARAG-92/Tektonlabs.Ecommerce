@@ -10,9 +10,15 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Common.Mappings
     {
         public MappingsProfile()
         {
-            CreateMap<Product, CreateProductCommand>().ReverseMap();
+            CreateMap<Product, CreateProductCommand>().ReverseMap()
+                .ForMember(destination => destination.StatusId, source => source.MapFrom(src => src.Status));
+
             CreateMap<Product, ProductDto>().ReverseMap();
-            CreateMap<Product, UpdateProductCommand>().ReverseMap();
+
+            CreateMap<Product, ProductInsertDto>().ReverseMap();
+
+            CreateMap<Product, UpdateProductCommand>().ReverseMap()
+                .ForMember(destination => destination.StatusId, source => source.MapFrom(src => src.Status));
 
         }
     }

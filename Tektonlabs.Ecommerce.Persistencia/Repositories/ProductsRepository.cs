@@ -18,10 +18,13 @@ namespace Tektonlabs.Ecommerce.Persistencia.Repositories
 
         #region Métodos Asíncronos
 
-        public async Task<bool> InsertAsync(Product product)
+        public async Task<Product> InsertAsync(Product product)
         {
             using var connection = _context.CreateConnection();
-                var query = "INSERT INTO dbo.Products([Name],[Stock],[StatusId],[Description],[Price],[FechaCreacion],[UnidadMedida],[Moneda]) VALUES (@Name,@Stock,@StatusId,@Description,@Price,@FechaCreacion,@UnidadMedida,@Moneda)";
+                var query = @"INSERT INTO dbo.Products([Name],[Stock],[StatusId],[Description],[Price],[FechaCreacion],[UnidadMedida],[Moneda]) 
+                                OUTPUT INSERTED.*
+                                VALUES (@Name,@Stock,@StatusId,@Description,@Price,@FechaCreacion,@UnidadMedida,@Moneda);
+                              ";
                 var parameters = new DynamicParameters();
                 parameters.Add("Name", product.Name);
                 parameters.Add("Stock", product.Stock);
@@ -32,8 +35,7 @@ namespace Tektonlabs.Ecommerce.Persistencia.Repositories
                 parameters.Add("UnidadMedida", Enum.GetName(typeof(TipoUnidadMedida), product.UnidadMedida));
                 parameters.Add("Moneda",  Enum.GetName(typeof(TipoMoneda), product.Moneda));
 
-                var result = await connection.ExecuteAsync(query, param: parameters);
-                return result > 0;
+            return await connection.QuerySingleOrDefaultAsync<Product>(query, param: parameters);
         }
 
         public async Task<bool> UpdateAsync(Product product)
@@ -69,10 +71,8 @@ namespace Tektonlabs.Ecommerce.Persistencia.Repositories
             var parameters = new DynamicParameters();
             parameters.Add("ProductId", id);
 
-            var product = await connection.QuerySingleOrDefaultAsync<Product>(query, param: parameters);
-            return product;
+            return await connection.QuerySingleOrDefaultAsync<Product>(query, param: parameters);
         }
-
         #endregion
     }
 }

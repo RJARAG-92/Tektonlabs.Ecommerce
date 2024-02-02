@@ -4,6 +4,7 @@ using Tektonlabs.Ecommerce.Application.UseCases.Common.Behaviours;
 using Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProductCommand;
 using System.Reflection;
 using Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.UpdateProductCommand;
+using LazyCache;
 
 namespace Tektonlabs.Ecommerce.Application.UseCases
 {
@@ -15,11 +16,10 @@ namespace Tektonlabs.Ecommerce.Application.UseCases
                 cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
                 cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
             });
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
+            services.AddAutoMapper(Assembly.GetExecutingAssembly()); 
             services.AddTransient<CreateProductValidator>();
             services.AddTransient<UpdateProductValidator>();
-
+            services.AddSingleton<IAppCache, CachingService>();
 
             return services;
         }

@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using MediatR;
+using Tektonlabs.Ecommerce.Application.DTO;
 using Tektonlabs.Ecommerce.Application.Interface.Persistence;
 using Tektonlabs.Ecommerce.Common;
 using Tektonlabs.Ecommerce.Domain.Entities;
 
 namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProductCommand
 {
-    public class CreateProductHandler : IRequestHandler<CreateProductCommand, Response<bool>>
+    public class CreateProductHandler : IRequestHandler<CreateProductCommand, Response<ProductInsertDto>>
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
@@ -20,20 +21,20 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProd
             _validator = validator;
         }
 
-        public async Task<Response<bool>> Handle( CreateProductCommand request, CancellationToken cancellationToken)
+        public async Task<Response<ProductInsertDto>> Handle( CreateProductCommand request, CancellationToken cancellationToken)
         {
-            var response = new Response<bool>();
+            var response = new Response<ProductInsertDto>();
 
             _validator.ValidateAndThrow(request);
 
-            var product = _mapper.Map<Product>(request); 
-            response.Data = await _unitOfWork.Products.InsertAsync(product);
-            if (response.Data)
+            var product = _mapper.Map<Product>(request);
+
+            response.Data = _mapper.Map<ProductInsertDto>(await _unitOfWork.Products.InsertAsync(product));
+            if (response.Data is not null)
             {
                 response.IsSuccess = true;
                 response.Message = "Registro Exitoso!!!";
             }
-
             return response;
         }
     }
