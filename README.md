@@ -9,45 +9,37 @@
 ## Tabla de contenidos:
 ---
 
-- [Pre-requisitos](#badges-o-escudos)
-- [Arquitectura de la Solución](#descripción-y-contexto)
+- [Arquitectura de la Solución](#arquitectura-de-la-Solución)
 - [Patrones de Diseño](#guía-de-usuario)
 - [Tecnologias](#guía-de-instalación)
 - [Guía de instalación Developer](#guía-de-instalación)
 - [Despliegue](#cómo-contribuir)
 - [Consejo Adicionales](#código-de-conducta)
 
-## Badges o escudos
+
+## Arquitectura de la Solución
 ---
-Es común en muchos repositorios open source el uso de badges o escudos para dar visbilidad el uso de microservicios, licencias, descargas, etc. Recomendamos revisar la iniciativa https://shields.io/ donde según consideres necesario podrás generar badges para tu repo. 
+La arquitectura de la solución se basa en Clean Architecture. Clean Architecture se representa principalmente en 04 capas: Domain, Application, Infrastucture y Presentation.
 
-### Ejemplos de badges
+<p align="center"><img style="width:300px; text-align: center;" src="https://www.ssw.com.au/rules/static/6b8c75864933e5265075d7ae7f90b165/d7542/ca-diagram.png"/></p> 
 
-- code coverage percentage: ![coverage](https://img.shields.io/badge/coverage-80%25-yellowgreen)
-- stable release version: ![version](https://img.shields.io/badge/version-1.2.3-blue)
-- package manager release: ![gem](https://img.shields.io/badge/gem-2.2.0-blue)
-- status of third-party dependencies: ![dependencies](https://img.shields.io/badge/dependencies-out%20of%20date-orange)
-- static code analysis grade: ![codacy](https://img.shields.io/badge/codacy-B-green)
-- [SemVer](https://semver.org/) version observance: ![semver](https://img.shields.io/badge/semver-2.0.0-blue)
-- amount of [Liberapay](https://liberapay.com/) donations per week: ![receives](https://img.shields.io/badge/receives-2.00%20USD%2Fweek-yellow)
-- Python package downloads: ![downloads](https://img.shields.io/badge/downloads-13k%2Fmonth-brightgreen)
-- Chrome Web Store extension rating: ![rating](https://img.shields.io/badge/rating-★★★★☆-brightgreen)
-- [Uptime Robot](https://uptimerobot.com) percentage: ![uptime](https://img.shields.io/badge/uptime-100%25-brightgreen)
-
-### Badges que solicitamos:
----
-En la iniciativa Código para el Desarrollo solicitamos a los equipos que suman sus herramientas al catálogo de sumar el badge generado por el uso del microservicio de evaluación estática de código SonarCloud.
-
-El badge se ve así y redirige al reporte de evaluación estática del último commit de la herramienta:
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=EL-BID_Plantilla-de-repositorio&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=EL-BID_Plantilla-de-repositorio)
+En ese sentido, el diseño de la solución, está definido por las siguientes capas:
+- Domain: Esta capa es el corazon de la arquitectura, contiene todas las entidades, enumeraciones, excepciones, tipos y lógicas específicas de la capa de dominio.
+- Application: Esta capa contiene toda la lógica de la aplicación, DTOs, mapeadores. Depende de la capa de dominio, pero no depende de ninguna otra capa o proyecto. Esta capa define interfaces que son implementadas por capas externas.
+- Infraestructure: Esta capa contiene clases para acceder a recursos externos como base de datos, sistemas de archivos, servicios web, SMTP, mensajería, colas, etc. Estas clases deben basarse en interfaces definidas dentro de la capa de aplicación.
+- Persistence: Esta capa se ha agregado para interactuar con base de datos externos o con otros tipos de repositorios de datos.
+- Presentation: Esta capa basicamen habilita endpoints e interactua con la capa de Application.
+- Common: Esta capa es transversal, interactua con todas las capas, implementa funciones comunes o clases bases.
 
 
-## Descripción y contexto
----
-Esto es un archivo README. Debe contener la documentación de soporte uso de la herramienta digital. Las siguientes secciones son las secciones recomendadas que debes poner incluir en cualquier herramienta digital. Puedes descargar este archivo para que te sirva como plantilla.
 
-Asegúrate de empezar este archivo con una breve descripción sobre las funcionalidades y contexto de la herramienta digital. Sé conciso y al grano.
+### Implementación en .NET Core 8
+
+En la siguiente figura se presenta el diseño de la solución en .NET Core 8 basado en el patrón de Clean Architecture. Así mismo, se puede observar las tecnologías utilizadas y las dependencias de cada capa. 
+
+<p  align="center" href="https://freeimage.host/i/J0JkypS"><img style="width:90%; text-align: center;" src="https://iili.io/J0JkypS.md.png" alt="J0JkypS.md.png" border="0"></p>
+ 
+    Esta arquitectura permite realizar cambios importantes en la aplicación, sin grandes impactos. Además, podrías cambiar el framework utilizado en caso de ser necesario, ya que está todo desacoplado, o cambiar la base de datos que uses o agregar alguna otra si la necesitas.
 
 ## Guía de usuario
 ---
