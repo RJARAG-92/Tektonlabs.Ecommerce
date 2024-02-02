@@ -1,4 +1,4 @@
-﻿using Tektonlabs.Ecommerce.Common.Enums;
+﻿using Tektonlabs.Ecommerce.Domain.Enums;
 
 namespace Tektonlabs.Ecommerce.Application.DTO
 {

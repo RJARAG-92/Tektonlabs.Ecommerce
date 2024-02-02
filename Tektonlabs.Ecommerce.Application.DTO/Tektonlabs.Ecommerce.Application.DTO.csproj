@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Common\Tektonlabs.Ecommerce.Common.csproj" />
+    <ProjectReference Include="..\Tektonlabs.Ecommerce.Domain\Tektonlabs.Ecommerce.Domain.csproj" />
   </ItemGroup>
 
 </Project>

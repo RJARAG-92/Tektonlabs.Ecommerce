@@ -5,8 +5,7 @@ using Tektonlabs.Ecommerce.Application.DTO;
 using Tektonlabs.Ecommerce.Application.Interface.Infrastructure;
 using Tektonlabs.Ecommerce.Application.Interface.Persistence;
 using Tektonlabs.Ecommerce.Common;
-using Tektonlabs.Ecommerce.Common.Enums;
-using Tektonlabs.Ecommerce.Common.Extensions;
+using Tektonlabs.Ecommerce.Domain.Common;
 
 namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQuery
 {

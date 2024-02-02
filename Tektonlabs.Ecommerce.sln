@@ -5,6 +5,7 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{EDB7BCFF-6E56-4B35-8C0E-782493AA3558}"
 	ProjectSection(SolutionItems) = preProject
+		CleanArchitectureNetCore.png = CleanArchitectureNetCore.png
 		Evaluacion - .Net.pdf = Evaluacion - .Net.pdf
 	EndProjectSection
 EndProject
@@ -20,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0E3D7B47-6B0B-4D30-924D-E8C0C68407F5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{80E46065-5EEA-4309-9471-41BD558F74DD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{80E46065-5EEA-4309-9471-41BD558F74DD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tektonlabs.Ecommerce.Application.DTO", "Tektonlabs.Ecommerce.Application.DTO\Tektonlabs.Ecommerce.Application.DTO.csproj", "{0AB8CDF9-4552-41CC-A6D4-64F5E483BA44}"
 EndProject

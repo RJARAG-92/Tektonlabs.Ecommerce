@@ -1,7 +1,6 @@
-﻿using Dapper; 
-using System.Data; 
+﻿using Dapper;  
 using Tektonlabs.Ecommerce.Application.Interface.Persistence;
-using Tektonlabs.Ecommerce.Common.Enums;
+using Tektonlabs.Ecommerce.Domain.Enums; 
 using Tektonlabs.Ecommerce.Domain.Entities;
 using Tektonlabs.Ecommerce.Persistencia.Contexts;
 

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Tektonlabs.Ecommerce.Application.DTO;
 using Tektonlabs.Ecommerce.Common;
-using Tektonlabs.Ecommerce.Common.Enums;
+using Tektonlabs.Ecommerce.Domain.Enums;
 
 namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProductCommand
 {

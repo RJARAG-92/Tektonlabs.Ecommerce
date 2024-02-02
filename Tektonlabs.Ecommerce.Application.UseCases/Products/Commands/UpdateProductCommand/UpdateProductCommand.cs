@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tektonlabs.Ecommerce.Common;
-using Tektonlabs.Ecommerce.Common.Enums;
+using Tektonlabs.Ecommerce.Domain.Enums;
+
 
 namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.UpdateProductCommand
 {

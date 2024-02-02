@@ -1,9 +1,6 @@
-﻿using Asp.Versioning;
-using MediatR;
-using Microsoft.AspNetCore.Http;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using System.Threading;
 using Tektonlabs.Ecommerce.Application.DTO;
 using Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProductCommand;
 using Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.UpdateProductCommand;

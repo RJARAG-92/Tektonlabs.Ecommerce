@@ -1,4 +1,4 @@
-﻿namespace Tektonlabs.Ecommerce.Common.Enums
+﻿namespace Tektonlabs.Ecommerce.Domain.Enums
 {
     public enum TipoUnidadMedida
     {

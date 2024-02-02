@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Application.DTO\Tektonlabs.Ecommerce.Application.DTO.csproj" />
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Application.Interface\Tektonlabs.Ecommerce.Application.Interface.csproj" />
-    <ProjectReference Include="..\Tektonlabs.Ecommerce.Common\Tektonlabs.Ecommerce.Common.csproj" />
     <ProjectReference Include="..\Tektonlabs.Ecommerce.Domain\Tektonlabs.Ecommerce.Domain.csproj" />
   </ItemGroup>
 
