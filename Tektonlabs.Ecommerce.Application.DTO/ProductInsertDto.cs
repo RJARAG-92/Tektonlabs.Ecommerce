@@ -1,4 +1,4 @@
-﻿ namespace Tektonlabs.Ecommerce.Application.DTO
+﻿namespace Tektonlabs.Ecommerce.Application.DTO
 {
     public class ProductInsertDto
     {

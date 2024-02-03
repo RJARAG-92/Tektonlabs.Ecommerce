@@ -1,16 +1,15 @@
 using Asp.Versioning.ApiExplorer;
+using HealthChecks.UI.Client;
+using Serilog;
 using Tektonlabs.Ecommerce.Application.UseCases;
+using Tektonlabs.Ecommerce.Infrastructure;
 using Tektonlabs.Ecommerce.Persistencia;
 using Tektonlabs.Ecommerce.WebApi.Modules.Feature;
+using Tektonlabs.Ecommerce.WebApi.Modules.HealthCheck;
 using Tektonlabs.Ecommerce.WebApi.Modules.Injection;
 using Tektonlabs.Ecommerce.WebApi.Modules.Middleware;
 using Tektonlabs.Ecommerce.WebApi.Modules.Swagger;
 using Tektonlabs.Ecommerce.WebApi.Modules.Versioning;
-using Tektonlabs.Ecommerce.Infrastructure;
-using Serilog;
-using Microsoft.Extensions.DependencyInjection;
-using HealthChecks.UI.Client;
-using Tektonlabs.Ecommerce.WebApi.Modules.HealthCheck;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddFeature(builder.Configuration);
-builder.Services.AddPersistenceServices(builder.Configuration);  
+builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
 builder.Services.AddInjection(builder.Configuration);

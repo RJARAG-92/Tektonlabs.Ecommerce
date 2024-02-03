@@ -17,11 +17,11 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProd
         public CreateProductHandler(IUnitOfWork unitOfWork, IMapper mapper, CreateProductValidator validator)
         {
             _unitOfWork = unitOfWork;
-            _mapper = mapper; 
+            _mapper = mapper;
             _validator = validator;
         }
 
-        public async Task<Response<ProductInsertDto>> Handle( CreateProductCommand request, CancellationToken cancellationToken)
+        public async Task<Response<ProductInsertDto>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
             var response = new Response<ProductInsertDto>();
 

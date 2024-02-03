@@ -4,7 +4,7 @@ namespace Tektonlabs.Ecommerce.Application.DTO
 {
     public class ProductDto
     {
-       public int ProductId { get; set; }
+        public int ProductId { get; set; }
         public string Name { get; set; } = string.Empty;
         public int StatusId { get; set; }
         public string StatusName { get; set; } = string.Empty;

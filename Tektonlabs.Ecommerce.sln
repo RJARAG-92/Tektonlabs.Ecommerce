@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tektonlabs.Ecommerce.WebApi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tektonlabs.Ecommerce.Persistencia", "Tektonlabs.Ecommerce.Persistencia\Tektonlabs.Ecommerce.Persistencia.csproj", "{22C8838A-DB3A-45EF-810B-FA964DCD523D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tektonlabs.Ecommerce.Application.Test", "Tektonlabs.Ecommerce.Application.Test\Tektonlabs.Ecommerce.Application.Test.csproj", "{A38D3641-6644-4BC2-B41E-C9308E8B630E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{22C8838A-DB3A-45EF-810B-FA964DCD523D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22C8838A-DB3A-45EF-810B-FA964DCD523D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22C8838A-DB3A-45EF-810B-FA964DCD523D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38D3641-6644-4BC2-B41E-C9308E8B630E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38D3641-6644-4BC2-B41E-C9308E8B630E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38D3641-6644-4BC2-B41E-C9308E8B630E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38D3641-6644-4BC2-B41E-C9308E8B630E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +101,7 @@ Global
 		{67DF5D05-EB9E-4E08-8776-966E28D53150} = {0E3D7B47-6B0B-4D30-924D-E8C0C68407F5}
 		{B7D53BCB-E918-4AD5-984A-DB2846F7B160} = {80E46065-5EEA-4309-9471-41BD558F74DD}
 		{22C8838A-DB3A-45EF-810B-FA964DCD523D} = {5B31523B-4246-4BCF-8EEE-069428FC8057}
+		{A38D3641-6644-4BC2-B41E-C9308E8B630E} = {6C99854B-459F-462A-B570-C620D5E9ECF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCA6E22E-F383-4143-913A-B1B242CD89DD}

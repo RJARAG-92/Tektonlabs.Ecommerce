@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Tektonlabs.Ecommerce.Application.Interface.Infrastructure;
 using Tektonlabs.Ecommerce.Infrastructure.MarketingApi;
-using Tektonlabs.Ecommerce.Infrastructure.MarketingApi.Options; 
-using Microsoft.Extensions.Configuration;
+using Tektonlabs.Ecommerce.Infrastructure.MarketingApi.Options;
 
 namespace Tektonlabs.Ecommerce.Infrastructure
 {

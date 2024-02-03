@@ -1,4 +1,4 @@
-﻿using FluentValidation; 
+﻿using FluentValidation;
 
 namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProductCommand
 {

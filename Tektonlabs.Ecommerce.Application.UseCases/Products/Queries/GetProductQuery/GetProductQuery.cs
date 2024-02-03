@@ -1,4 +1,4 @@
-﻿using MediatR; 
+﻿using MediatR;
 using Tektonlabs.Ecommerce.Application.DTO;
 using Tektonlabs.Ecommerce.Common;
 
@@ -6,7 +6,7 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQ
 {
     public sealed record class GetProductQuery : IRequest<Response<ProductDto>>
     {
-        public int ProductId { get;}
+        public int ProductId { get; }
 
         public GetProductQuery(int productId)
         {

@@ -6,8 +6,6 @@ using Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.CreateProductC
 using Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.UpdateProductCommand;
 using Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQuery;
 using Tektonlabs.Ecommerce.Common;
-using Tektonlabs.Ecommerce.Domain.Entities;
-using static Dapper.SqlMapper;
 
 namespace Tektonlabs.Ecommerce.WebApi.Controllers.v1
 {
@@ -38,7 +36,7 @@ namespace Tektonlabs.Ecommerce.WebApi.Controllers.v1
         [SwaggerResponse(201, "Insert", typeof(Response<ProductInsertDto>))]
         [SwaggerResponse(400, "Error Server")]
         public async Task<IActionResult> Insert([FromBody] CreateProductCommand command)
-        { 
+        {
             var response = await _mediator.Send(command);
             if (response.IsSuccess)
                 return StatusCode(StatusCodes.Status201Created, response);
@@ -93,7 +91,7 @@ namespace Tektonlabs.Ecommerce.WebApi.Controllers.v1
         [SwaggerResponse(404, "Notfound Product")]
         [SwaggerResponse(400, "Error Server")]
         public async Task<IActionResult> GetById([FromRoute] int id)
-        { 
+        {
             var response = await _mediator.Send(new GetProductQuery(id));
             if (response.Data == null)
                 return NotFound(response);

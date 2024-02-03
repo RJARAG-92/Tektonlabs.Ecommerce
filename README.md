@@ -108,7 +108,7 @@ Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar
 
 2. Abrir SQL Server Management Studio y ejecutar el archivo script_db_ecommerce.sql del repositorio clonado. Tener en consideración que el proyecto esta configurado para conectar con autenticación con Window, en caso desea cambiar se debe modificar el appsetting.json de la capa webApi.
 
-<p  align="center" href="https://iili.io/J0ojEmb.png"><img style="width:100%; text-align: center;" src="https://iili.io/J0ojEmb.png" alt="Database" border="0"></p>
+<p  align="center" href="https://iili.io/J0ojEmb.png"><img style="width:60%; text-align: center;" src="https://iili.io/J0ojEmb.png" alt="Database" border="0"></p>
  
 3. Abrir la solución Tektonlabs.Ecommerce.sln con Visual Studio 2022, recordar que la propuesta está implementado con .Net 8.
 

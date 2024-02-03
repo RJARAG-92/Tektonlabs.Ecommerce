@@ -2,7 +2,7 @@
 
 namespace Tektonlabs.Ecommerce.Application.Interface.Persistence
 {
-    public interface IProductsRepository:IGenericRepository<Product>
+    public interface IProductsRepository : IGenericRepository<Product>
     {
     }
 }

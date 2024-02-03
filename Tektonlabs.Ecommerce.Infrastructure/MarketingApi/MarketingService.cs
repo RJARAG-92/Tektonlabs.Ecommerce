@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options; 
-using System.Text.Json; 
+using Microsoft.Extensions.Options;
+using System.Text.Json;
 using Tektonlabs.Ecommerce.Application.Interface.Infrastructure;
 using Tektonlabs.Ecommerce.Domain.MarketingApi;
 using Tektonlabs.Ecommerce.Infrastructure.MarketingApi.Options;
@@ -9,14 +9,14 @@ namespace Tektonlabs.Ecommerce.Infrastructure.MarketingApi
 {
     public class MarketingService(IOptions<MarketingServiceOptions> options, ILogger<MarketingService> logger) : IMarketingApi
     {
-        private readonly ILogger<MarketingService> _logger= logger;
+        private readonly ILogger<MarketingService> _logger = logger;
         private readonly HttpClient _client = new HttpClient();
         private readonly MarketingServiceOptions _options = options.Value;
-         
+
         public async Task<DiscountModel> GetDiscountAsync(int id)
         {
             DiscountModel discountModels = new DiscountModel(); ;
-            Uri uri = new(string.Format(Path.Combine( _options.UrlBase,_options.EndPointDiscounts,id.ToString()), string.Empty));
+            Uri uri = new(string.Format(Path.Combine(_options.UrlBase, _options.EndPointDiscounts, id.ToString()), string.Empty));
             HttpResponseMessage response = await _client.GetAsync(uri);
             try
             {

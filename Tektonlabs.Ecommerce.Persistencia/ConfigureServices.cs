@@ -10,7 +10,7 @@ namespace Tektonlabs.Ecommerce.Persistencia
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<DapperContext>(); 
+            services.AddSingleton<DapperContext>();
             services.AddScoped<IProductsRepository, ProductsRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

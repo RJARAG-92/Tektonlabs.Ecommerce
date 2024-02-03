@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using MediatR; 
+using MediatR;
 using Tektonlabs.Ecommerce.Application.Interface.Persistence;
 using Tektonlabs.Ecommerce.Common;
 using Tektonlabs.Ecommerce.Domain.Entities;

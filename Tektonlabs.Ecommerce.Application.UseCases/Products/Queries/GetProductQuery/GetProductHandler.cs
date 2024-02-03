@@ -34,7 +34,7 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQ
             {
                 var _productsStates = await GetProductStatesAllAsync();
                 var discount = await _marketingApi.GetDiscountAsync(request.ProductId);
-                response.Data.StatusName= _productsStates[Convert.ToString(response.Data.StatusId)];
+                response.Data.StatusName = _productsStates[Convert.ToString(response.Data.StatusId)];
                 response.Data.Discount = discount.PercentValue;
                 response.IsSuccess = true;
                 response.Message = "Consulta Exitosa!!!";
@@ -47,6 +47,6 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQ
             string cacheKey = $"ProductsStates";
             return await _lazyCache.GetOrAddAsync(cacheKey, () => EnumExtensions.ProductStatusToList(), TimeSpan.FromMinutes(5));
         }
-     
+
     }
 }
