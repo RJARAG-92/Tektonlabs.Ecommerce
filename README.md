@@ -29,12 +29,12 @@ La arquitectura de la solución se basa en Clean Architecture. Clean Architectur
 <p align="center"><img style="width:300px; text-align: center;" src="https://www.ssw.com.au/rules/static/6b8c75864933e5265075d7ae7f90b165/d7542/ca-diagram.png"/></p> 
 
 En ese sentido, el diseño de la solución, está definido por las siguientes capas:
-- Domain: Esta capa es el corazon de la arquitectura, contiene todas las entidades, enumeraciones, excepciones, tipos y lógicas específicas de la capa de dominio.
-- Application: Esta capa contiene toda la lógica de la aplicación, DTOs, mapeadores. Depende de la capa de dominio, pero no depende de ninguna otra capa o proyecto. Esta capa define interfaces que son implementadas por capas externas.
-- Infraestructure: Esta capa contiene clases para acceder a recursos externos como base de datos, sistemas de archivos, servicios web, SMTP, mensajería, colas, etc. Estas clases deben basarse en interfaces definidas dentro de la capa de aplicación.
-- Persistence: Esta capa se ha agregado para interactuar con base de datos externos o con otros tipos de repositorios de datos.
-- Presentation: Esta capa basicamen habilita endpoints e interactua con la capa de Application.
-- Common: Esta capa es transversal, interactua con todas las capas, implementa funciones comunes o clases bases.
+- **Domain:** Esta capa es el corazon de la arquitectura, contiene todas las entidades, enumeraciones, excepciones, tipos y lógicas específicas de la capa de dominio.
+- **Application:** Esta capa contiene toda la lógica de la aplicación, DTOs, mapeadores. Depende de la capa de dominio, pero no depende de ninguna otra capa o proyecto. Esta capa define interfaces que son implementadas por capas externas.
+- **Infraestructure:** Esta capa contiene clases para acceder a recursos externos como base de datos, sistemas de archivos, servicios web, SMTP, mensajería, colas, etc. Estas clases deben basarse en interfaces definidas dentro de la capa de aplicación.
+- **Persistence:** Esta capa se ha agregado para interactuar con base de datos externos o con otros tipos de repositorios de datos.
+- **Presentation:** Esta capa basicamen habilita endpoints e interactua con la capa de Application.
+- **Common:** Esta capa es transversal, interactua con todas las capas, implementa funciones comunes o clases bases.
 
 
 
