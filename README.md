@@ -3,8 +3,13 @@
 ![analytics](https://www.google-analytics.com/collect?v=1&cid=555&t=pageview&ec=repo&ea=open&dp=/Plantilla-de-repositorio/readme&dt=&tid=UA-4677001-16)
 
 <h1 align="center"> Challenge Tekton Labs</h1>
-<p align="center"> En este repositorio encontraras la implementación del reto plantado por Tekton Labs. El reto consiste básicamente en desarrollar una solución Api Rest en .Net Core 8 implementando los mejores patrones de diseño de software. Así mismo, el reto demanda aplicar los principios SOLID, Clean Code y TDD (Test-Driven Development), y para la documentación se debe considerar utilizar swagger.</p>
+<p align="center"> En este repositorio encontraras la implementación del reto plantado por Tekton Labs. El reto consiste básicamente en desarrollar una solución Api Rest en .Net Core 8 implementando los mejores patrones de diseño de software. Así mismo, el reto demanda aplicar los principios SOLID, Clean Code y TDD (Test-Driven Development), y para la documentación se debe considerar utilizar swagger.
+
+</p>
 <p align="center"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--nsY4HBk_--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ge2kjywvjuee9nw53wme.png"/></p> 
+
+Ver documentación del Challenge [Aquí](https://github.com/RJARAG-92/Tektonlabs.Ecommerce/blob/db0015de585b1de3fb5f6d2d456530d70e77a7dc/Evaluacion%20-%20.Net.pdf) 
+
 
 ## Tabla de contenidos:
 ---
@@ -13,6 +18,7 @@
 - [Patrones de Diseño](#patrones-de-diseño)
 - [Guía de instalación](#guía-de-instalación)
 - [Despliegue en Contenedor](#despliegue-en-contenedor)
+- [Conclusiones](#Conclusiones)
 
 
 ## Arquitectura de la Solución
@@ -97,7 +103,7 @@ Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar
 
 1. Clonar repositorio usando git bash.
 
-    git clone https://github.com/RJARAG-92/Tektonlabs.Ecommerce.git
+        git clone https://github.com/RJARAG-92/Tektonlabs.Ecommerce.git
 
 2. Abrir SQL Server Management Studio y ejecutar el archivo script_db_ecommerce.sql del repositorio clonado. Tener en consideración que el proyecto esta configurado para conectar con autenticación con Window, en caso desea cambiar se debe modificar el appsetting de la capa webApi.
 
@@ -116,9 +122,17 @@ Una guía paso a paso para desplegar la aplicación con docker.
 1. Ubicarnos en la raiz del repositorio clonado.
 
 2. Generar imagen utilizando el siguiente comando
-    docker build -f Tektonlabs.Ecommerce.WebApi/Dockerfile --force-rm -t tekton-webapi:v1 .
+
+        docker build -f Tektonlabs.Ecommerce.WebApi/Dockerfile --force-rm -t tekton-webapi:v1 .
 
 3. Ejecutar el contenedor utilizando el siguiente comando
-    docker run -d -p 8080:8080 tekton-webapi:v1
+
+        docker run -d -p 8080:8080 tekton-webapi:v1
 
 Tener en consideración que el puerto debe estar disponible, y tenga comunicación con la base de datos. Recordar que el swagger solo esta disponibilizado para entorno de desarrollo.
+
+## Conclusiones
+---
+Podemos concluir que la solución  basada en Clean Architecture, está estructurada en capas contiguas, es ideal cuando se tiene un proyecto a largo plazo, se puede testear con facilidad y sobretodo contar con alta tolerancia al cambio. 
+
+Cabe mencionar que los puntos planteados en el reto de Tekton Labs han sido cubiertos en su totalidad. Desde implementar patrones, aplicar principios SOLID y Clean Code, hasta el desarrollo de pruebas unitarias.
