@@ -61,7 +61,7 @@ En la solución propuesta, como ya habiamos mencionado anteriormente, está basa
 - Logger, registro de log en texto plano con Serilog.
 - Middleware para manejo global de Excepciones 
 - Despliegue en Contenedores Docker
-- Documentar APi con Swagger y ReDoc
+- Documentar APi con Swagger 
 
 ### Capa de Application
 - Patrón Inyección de Dependencias (OI)
@@ -113,7 +113,37 @@ Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar
 
 5. Iniciar depuración con IIS Express o Docker. 
 
-6. Probar el servicio Products con swagger: http://localhost:49173/swagger/index.html. Tener en consideración el puerto, para nuestro caso usamos el puerto 49173.
+6. Revisar la documentacion de la api con swagger, url: http://localhost:49173/swagger/index.html. Tener en consideración el puerto, para nuestro caso esta configurardo para usar el puerto 49173.
+
+7. Testear desde swagger el endpoint para registrar nuevo producto, devuelve un nuevo id, en nuestro caso devuelve 1 por ser le primer registro insertado:
+
+    POST: api/v1/Products
+        
+        {
+        "name": "Product 001",
+        "status": 1,
+        "unidadMedida": "UNIDAD",
+        "stock": 10,
+        "moneda": "PEN",
+        "price": 200,
+        "description": "Producto de prueba"
+        }
+
+8. Testear desde swagger el endpoint para actualizar un producto, utilizamos el nuevo id obtenido por el paso anterior, reemplazar en {id}:
+
+
+    POST: api/v1/Products/{id}
+        
+        {
+        "name": "Product 001",
+        "status": 1,
+        "unidadMedida": "UNIDAD",
+        "stock": 10,
+        "moneda": "PEN",
+        "price": 200,
+        "description": "Producto de prueba"
+        }
+
 
 ## Despliegue en Contenedor
 ---

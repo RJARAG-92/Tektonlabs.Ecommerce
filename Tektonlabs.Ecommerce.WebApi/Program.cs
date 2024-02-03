@@ -8,6 +8,9 @@ using Tektonlabs.Ecommerce.WebApi.Modules.Swagger;
 using Tektonlabs.Ecommerce.WebApi.Modules.Versioning;
 using Tektonlabs.Ecommerce.Infrastructure;
 using Serilog;
+using Microsoft.Extensions.DependencyInjection;
+using HealthChecks.UI.Client;
+using Tektonlabs.Ecommerce.WebApi.Modules.HealthCheck;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +24,7 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInjection(builder.Configuration);
 builder.Services.AddVersioning();
 builder.Services.AddSwagger();
+builder.Services.AddHealthCheck(builder.Configuration);
 
 // Use Serilog for logging and read configuration from appsettings
 builder.Host.UseSerilog((context, configuration) =>
@@ -45,22 +49,19 @@ if (app.Environment.IsDevelopment())
             c.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
         }
     });
-
-    //app.UseReDoc(options =>
-    //{
-    //    foreach (var description in provider.ApiVersionDescriptions)
-    //    {
-    //        options.DocumentTitle = "Pacagroup Technology Services API Market";
-    //        options.SpecUrl = $"/swagger/{description.GroupName}/swagger.json";
-    //    }
-    //});
 }
 
 app.UseHttpsRedirection();
 app.UseCors("policyApiEcommerce");
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers(); 
+app.MapControllers();
+app.MapHealthChecksUI();
+app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 app.AddMiddleware();
 // Allow httprequest logs in Serilog
 app.UseSerilogRequestLogging();
