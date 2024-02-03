@@ -57,6 +57,7 @@ En la solución propuesta, como ya habiamos mencionado anteriormente, está basa
 
 ### Capa de Presentation
 - Patrón Inyeccion de Dependencias (OI)
+- Patrón Health Cheks
 - Control de Versiones de API utilizando parametros en el segmento en la URL.
 - Logger, registro de log en texto plano con Serilog.
 - Middleware para manejo global de Excepciones 
@@ -105,17 +106,27 @@ Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar
 
         git clone https://github.com/RJARAG-92/Tektonlabs.Ecommerce.git
 
-2. Abrir SQL Server Management Studio y ejecutar el archivo script_db_ecommerce.sql del repositorio clonado. Tener en consideración que el proyecto esta configurado para conectar con autenticación con Window, en caso desea cambiar se debe modificar el appsetting de la capa webApi.
+2. Abrir SQL Server Management Studio y ejecutar el archivo script_db_ecommerce.sql del repositorio clonado. Tener en consideración que el proyecto esta configurado para conectar con autenticación con Window, en caso desea cambiar se debe modificar el appsetting.json de la capa webApi.
 
+<p  align="center" href="https://iili.io/J0ojEmb.png"><img style="width:100%; text-align: center;" src="https://iili.io/J0ojEmb.png" alt="Database" border="0"></p>
+ 
 3. Abrir la solución Tektonlabs.Ecommerce.sln con Visual Studio 2022, recordar que la propuesta está implementado con .Net 8.
 
 4. Compilar la solución.
 
-5. Iniciar depuración con IIS Express o Docker. 
+5. Iniciar depuración con IIS Express o Docker (F5), y esperar que levante el navegador con el swagger.
 
-6. Revisar la documentacion de la api con swagger, url: http://localhost:49173/swagger/index.html. Tener en consideración el puerto, para nuestro caso esta configurardo para usar el puerto 49173.
+6. Revisar la documentacion de la api con swagger, para url: http://localhost:49173/swagger/index.html. Tener en consideración el puerto, para nuestro caso esta configurardo para usar el puerto 49173.
 
-7. Testear desde swagger el endpoint para registrar nuevo producto, devuelve un nuevo id, en nuestro caso devuelve 1 por ser le primer registro insertado:
+<p  align="center" href="https://iili.io/J0oa3xe.png"><img style="width:100%; text-align: center;" src="https://iili.io/J0oa3xe.png" alt="Swagger" border="0"></p>
+
+7. Antes de iniciar con las pruebas, se recomienda realizar la comprobación del estado de salud, para ello se debe ingresar a la url: http://localhost:49173/healthchecks-ui. Recordar que la solución implementa el patrón Health Checks, en donde tenemos matriculado a la base de datos a usar, en el UI podemos observar la disponibilidad de la base de datos. 
+
+    En un entorno productivo, los componentes deben estar operativos para el correcto funcionamiento de la aplicación. 
+
+<p  align="center" href="https://iili.io/J0oudDG.png"><img style="width:95%; text-align: center;" src="https://iili.io/J0oudDG.png" alt="HealdChecks" border="0"></p>
+
+8. Testear desde swagger el endpoint para registrar nuevo producto, devuelve un nuevo id, en nuestro caso devuelve 1 por ser le primer registro insertado:
 
     POST: api/v1/Products
         
@@ -129,10 +140,9 @@ Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar
         "description": "Producto de prueba"
         }
 
-8. Testear desde swagger el endpoint para actualizar un producto, utilizamos el nuevo id obtenido por el paso anterior, reemplazar en {id}:
+9. Testear desde swagger el endpoint para actualizar un producto, utilizamos el nuevo id obtenido por el paso anterior, reemplazar en {id}:
 
-
-    POST: api/v1/Products/{id}
+    PUT: api/v1/Products/{id}
         
         {
         "name": "Product 001",
@@ -143,6 +153,10 @@ Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar
         "price": 200,
         "description": "Producto de prueba"
         }
+
+10. Testear desde swagger el endpoint para consultar un producto por id, utilizamos el id del paso anterior, reemplazar en {id}:
+
+    GET: api/v1/Products/{id}
 
 
 ## Despliegue en Contenedor
