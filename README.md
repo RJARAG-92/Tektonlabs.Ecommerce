@@ -10,11 +10,9 @@
 ---
 
 - [Arquitectura de la Solución](#arquitectura-de-la-Solución)
-- [Patrones de Diseño](#guía-de-usuario)
-- [Tecnologias](#guía-de-instalación)
-- [Guía de instalación Developer](#guía-de-instalación)
-- [Despliegue](#cómo-contribuir)
-- [Consejo Adicionales](#código-de-conducta)
+- [Patrones de Diseño](#patrones-de-diseño)
+- [Guía de instalación](#guía-de-instalación)
+- [Despliegue en Contenedor](#despliegue-en-contenedor)
 
 
 ## Arquitectura de la Solución
@@ -33,68 +31,94 @@ En ese sentido, el diseño de la solución, está definido por las siguientes ca
 
 
 
-### Implementación en .NET Core 8
+### Clean Architecture en .NET Core 8
 
 En la siguiente figura se presenta el diseño de la solución en .NET Core 8 basado en el patrón de Clean Architecture. Así mismo, se puede observar las tecnologías utilizadas y las dependencias de cada capa. 
 
-<p  align="center" href="https://freeimage.host/i/J0JkypS"><img style="width:90%; text-align: center;" src="https://iili.io/J0JkypS.md.png" alt="J0JkypS.md.png" border="0"></p>
+<p  align="center" href="https://freeimage.host/i/J0JkypS"><img style="width:90%; text-align: center;" src="https://iili.io/J0JkypS.png" alt="CleanArchitectureNetCore" border="0"></p>
  
-    Esta arquitectura permite realizar cambios importantes en la aplicación, sin grandes impactos. Además, podrías cambiar el framework utilizado en caso de ser necesario, ya que está todo desacoplado, o cambiar la base de datos que uses o agregar alguna otra si la necesitas.
+Esta arquitectura permite realizar cambios importantes en la aplicación, sin grandes impactos. Además, permite cambiar el framework implementado en caso de ser necesario, ya que sus componentes están altamente desacoplado, o cambiar la base de datos o agregar alguna otra.
 
-## Guía de usuario
+En la siguiente figura se evidencia la implementación la arquitectura propuesta en .NET Core 8, estructurado la solución en N-capas.
+
+<p  align="center" href="https://freeimage.host/i/J0JkypS"><img style="width:90%; text-align: center;" src="https://iili.io/J0dR9EJ.png" alt="ImplementacionCleanArchitectureNetCore" border="0"></p>
+
+## Patrones de Diseño
 ---
-Explica los pasos básicos sobre cómo usar la herramienta digital. Es una buena sección para mostrar capturas de pantalla o gifs que ayuden a entender la herramienta digital.
+Los patrones de diseño son técnicas para resolver problemas comunes en el desarrollo de software y otros ámbitos referentes al diseño de interacción o interfaces. 
+
+En la solución propuesta, como ya habiamos mencionado anteriormente, está basada en el Patrón Clean Architecture. En las siguientes capas se detalla los patrones implementados y sus principales aspectos técnicos.
+
+### Capa de Presentation
+- Patrón Inyeccion de Dependencias (OI)
+- Control de Versiones de API utilizando parametros en el segmento en la URL.
+- Logger, registro de log en texto plano con Serilog.
+- Middleware para manejo global de Excepciones 
+- Despliegue en Contenedores Docker
+- Documentar APi con Swagger y ReDoc
+
+### Capa de Application
+- Patrón Inyección de Dependencias (OI)
+- Patrón DTO
+- Patrón Mediador
+- Patrón CQRS 
+- Patrón Decorador
+- Middleware para Logging de Peticiones Http
+- Almacenamiento en Cache con Lazy
+
+### Capa de Infraestructure
+- Patrón Inyección de Dependencias (OI)
+- Patrón Options
+
+### Capa de Persistence
+- Patrón Inyección de Dependencias (OI)
+- Patrón Repository
+- Patrón Unit of Work 
+- Dapper
  	
 ## Guía de instalación
 ---
-Paso a paso de cómo instalar la herramienta digital. En esta sección es recomendable explicar la arquitectura de carpetas y módulos que componen el sistema.
+Estas instrucciones te guiarán para obtener una copia de este proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
-Según el tipo de herramienta digital, el nivel de complejidad puede variar. En algunas ocasiones puede ser necesario instalar componentes que tienen dependencia con la herramienta digital. Si este es el caso, añade también la siguiente sección.
+### Pre requisitos 
 
-La guía de instalación debe contener de manera específica:
-- Los requisitos del sistema operativo para la compilación (versiones específicas de librerías, software de gestión de paquetes y dependencias, SDKs y compiladores, etc.).
-- Las dependencias propias del proyecto, tanto externas como internas (orden de compilación de sub-módulos, configuración de ubicación de librerías dinámicas, etc.).
-- Pasos específicos para la compilación del código fuente y ejecución de tests unitarios en caso de que el proyecto disponga de ellos.
+Lista de software y herramientas, incluyendo versiones, que necesitas para instalar y ejecutar este proyecto:
 
-### Dependencias
-Descripción de los recursos externos que generan una dependencia para la reutilización de la herramienta digital (librerías, frameworks, acceso a bases de datos y licencias de cada recurso). Es una buena práctica describir las últimas versiones en las que ha sido probada la herramienta digital. 
+- Sistema Operativo 10 a más
+- Visual Studio 2022 - .Net 8
+- SQL Server Management Studio 19
+- SQL Server 16.0 - Autenticacion con Windows
+- Docker Engine v24.0.7
+- Git 2.43.0.windows.1
+- mockapi.io:  https://65bbd87652189914b5bd34a9.mockapi.io/ 
 
-    Puedes usar este estilo de letra diferenciar los comandos de instalación.
+### Instalación
+Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar todas las dependencias.
 
-## Cómo contribuir
+1. Clonar repositorio usando git bash.
+
+    git clone https://github.com/RJARAG-92/Tektonlabs.Ecommerce.git
+
+2. Abrir SQL Server Management Studio y ejecutar el archivo script_db_ecommerce.sql del repositorio clonado. Tener en consideración que el proyecto esta configurado para conectar con autenticación con Window, en caso desea cambiar se debe modificar el appsetting de la capa webApi.
+
+3. Abrir la solución Tektonlabs.Ecommerce.sln con Visual Studio 2022, recordar que la propuesta está implementado con .Net 8.
+
+4. Compilar la solución.
+
+5. Iniciar depuración con IIS Express o Docker. 
+
+6. Probar el servicio Products con swagger: http://localhost:49173/swagger/index.html. Tener en consideración el puerto, para nuestro caso usamos el puerto 49173.
+
+## Despliegue en Contenedor
 ---
-Esta sección explica a desarrolladores cuáles son las maneras habituales de enviar una solicitud de adhesión de nuevo código (“pull requests”), cómo declarar fallos en la herramienta y qué guías de estilo se deben usar al escribir más líneas de código. También puedes hacer un listado de puntos que se pueden mejorar de tu código para crear ideas de mejora.
+Una guía paso a paso para desplegar la aplicación con docker.
 
-## Código de conducta 
----
-El código de conducta establece las normas sociales, reglas y responsabilidades que los individuos y organizaciones deben seguir al interactuar de alguna manera con la herramienta digital o su comunidad. Es una buena práctica para crear un ambiente de respeto e inclusión en las contribuciones al proyecto. 
+1. Ubicarnos en la raiz del repositorio clonado.
 
-La plataforma Github premia y ayuda a los repositorios dispongan de este archivo. Al crear CODE_OF_CONDUCT.md puedes empezar desde una plantilla sugerida por ellos. Puedes leer más sobre cómo crear un archivo de Código de Conducta (aquí)[https://help.github.com/articles/adding-a-code-of-conduct-to-your-project/]
+2. Generar imagen utilizando el siguiente comando
+    docker build -f Tektonlabs.Ecommerce.WebApi/Dockerfile --force-rm -t tekton-webapi:v1 .
 
-## Autor/es
----
-Nombra a el/los autor/es original/es. Consulta con ellos antes de publicar un email o un nombre personal. Una manera muy común es dirigirlos a sus cuentas de redes sociales.
+3. Ejecutar el contenedor utilizando el siguiente comando
+    docker run -d -p 8080:8080 tekton-webapi:v1
 
-## Información adicional
----
-Esta es la sección que permite agregar más información de contexto al proyecto como alguna web de relevancia, proyectos similares o que hayan usado la misma tecnología.
-
-## Licencia 
----
-
-La licencia especifica los permisos y las condiciones de uso que el desarrollador otorga a otros desarrolladores que usen y/o modifiquen la herramienta digital.
-
-Incluye en esta sección una nota con el tipo de licencia otorgado a esta herramienta digital. El texto de la licencia debe estar incluído en un archivo *LICENSE.md* o *LICENSE.txt* en la raíz del repositorio.
-
-Si desconoces qué tipos de licencias existen y cuál es la mejor para cada caso, te recomendamos visitar la página https://choosealicense.com/.
-
-Si la herramienta que estás publicando con la iniciativa Código para el Desarrollo ha sido financiada por el BID, te invitamos a revisar la [licencia oficial del banco para publicar software](https://github.com/EL-BID/Plantilla-de-repositorio/blob/master/LICENSE.md)
-
-## Limitación de responsabilidades
-Disclaimer: Esta sección es solo para herramientas financiadas por el BID.
-
-El BID no será responsable, bajo circunstancia alguna, de daño ni indemnización, moral o patrimonial; directo o indirecto; accesorio o especial; o por vía de consecuencia, previsto o imprevisto, que pudiese surgir:
-
-i. Bajo cualquier teoría de responsabilidad, ya sea por contrato, infracción de derechos de propiedad intelectual, negligencia o bajo cualquier otra teoría; y/o
-
-ii. A raíz del uso de la Herramienta Digital, incluyendo, pero sin limitación de potenciales defectos en la Herramienta Digital, o la pérdida o inexactitud de los datos de cualquier tipo. Lo anterior incluye los gastos o daños asociados a fallas de comunicación y/o fallas de funcionamiento de computadoras, vinculados con la utilización de la Herramienta Digital.
+Tener en consideración que el puerto debe estar disponible, y tenga comunicación con la base de datos. Recordar que el swagger solo esta disponibilizado para entorno de desarrollo.

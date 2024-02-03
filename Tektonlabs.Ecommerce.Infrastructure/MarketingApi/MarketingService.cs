@@ -16,7 +16,7 @@ namespace Tektonlabs.Ecommerce.Infrastructure.MarketingApi
         public async Task<DiscountModel> GetDiscountAsync(int id)
         {
             DiscountModel discountModels = new DiscountModel(); ;
-            Uri uri = new Uri(string.Format(Path.Combine( _options.UrlBase,_options.EndPointDiscounts,id.ToString()), string.Empty));
+            Uri uri = new(string.Format(Path.Combine( _options.UrlBase,_options.EndPointDiscounts,id.ToString()), string.Empty));
             HttpResponseMessage response = await _client.GetAsync(uri);
             try
             {

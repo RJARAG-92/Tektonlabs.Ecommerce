@@ -5,6 +5,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Tektonlabs.Ecommerce.WebApi.Modules.Swagger
 {
+    /// Configure Swagger Options  
     public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
     {
         readonly IApiVersionDescriptionProvider provider;
@@ -31,8 +32,8 @@ namespace Tektonlabs.Ecommerce.WebApi.Modules.Swagger
             var info = new OpenApiInfo
             {
                 Version = description.ApiVersion.ToString(),
-                Title = "Tekton Labs Technology Services API Market",
-                Description = "ASP.NET Core Web API. ",
+                Title = "Tekton Labs Technology Services API",
+                Description = "ASP.NET Core 8 - Web API. ",
                 TermsOfService = new Uri("https://tekton.com"),
                 Contact = new OpenApiContact
                 {

@@ -2,8 +2,14 @@
 
 namespace Tektonlabs.Ecommerce.WebApi.Modules.Feature
 {
+    /// <summary>
+    /// FeatureExtensions
+    /// </summary>
     public static class FeatureExtensions
     {
+        /// <summary>
+        /// Implementación Feature
+        /// </summary>
         public static IServiceCollection AddFeature(this IServiceCollection services, IConfiguration configuration)
         {
             string myPolicy = "policyApiEcommerce";

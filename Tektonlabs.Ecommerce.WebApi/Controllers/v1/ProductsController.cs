@@ -9,11 +9,13 @@ using Tektonlabs.Ecommerce.Common;
 
 namespace Tektonlabs.Ecommerce.WebApi.Controllers.v1
 {
+    /// Api Products  
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
         private readonly IMediator _mediator;
+        /// Constructor  
         public ProductsController(IMediator mediator)
         {
             _mediator = mediator;
