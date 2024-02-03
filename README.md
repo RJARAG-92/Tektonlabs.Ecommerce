@@ -16,7 +16,8 @@ Ver documentación del Challenge [Aquí](https://github.com/RJARAG-92/Tektonlabs
 
 - [Arquitectura de la Solución](#arquitectura-de-la-Solución)
 - [Patrones de Diseño](#patrones-de-diseño)
-- [Guía de instalación](#guía-de-instalación)
+- [Guía de Instalación](#guía-de-instalación)
+- [Pruebas Unitarias](#pruebas-unitarias)
 - [Despliegue en Contenedor](#despliegue-en-contenedor)
 - [Conclusiones](#Conclusiones)
 
@@ -175,8 +176,19 @@ Una guía paso a paso para desplegar la aplicación con docker.
 
 Tener en consideración que el puerto debe estar disponible, y tenga comunicación con la base de datos. Recordar que el swagger solo esta disponibilizado para entorno de desarrollo.
 
+## Pruebas Unitarias
+---
+Para las pruebas unitarias se ha implementando utilizando la tecnología xUnit en .NET
+
+En la solución se ha implementado 4 pruebas unitarias, en la figura siguientes podemos observar sus ejecuciones y la estructura del proyecto.
+
+<p  align="center" href="https://iili.io/J0RrJat.png"><img style="width:95%; text-align: center;" src="https://iili.io/J0RrJat.png" alt="PruebasUnitarias" border="0"></p>
+ 
+
 ## Conclusiones
 ---
 Podemos concluir que la solución  basada en Clean Architecture, está estructurada en capas contiguas, es ideal cuando se tiene un proyecto a largo plazo, se puede testear con facilidad y sobretodo contar con alta tolerancia al cambio. 
 
-Cabe mencionar que los puntos planteados en el reto de Tekton Labs han sido cubiertos en su totalidad. Desde implementar patrones, aplicar principios SOLID y Clean Code, hasta el desarrollo de pruebas unitarias.
+Por otro lado, xUnit es una tecnología muy poderosa para realizar pruebas unitarias. En la solución propuesta se ha implementado 04 pruebas unitarias para efectos demostrativos. Sin embargo, en un entorno productivo lo ideal es presentar una convertura por encima del 80%.
+
+Finalmente, es preciso mencionar que los puntos planteados en el reto de Tekton Labs han sido cubiertos en su totalidad. Desde implementar patrones, aplicar principios SOLID y Clean Code, hasta el desarrollo de pruebas unitarias.

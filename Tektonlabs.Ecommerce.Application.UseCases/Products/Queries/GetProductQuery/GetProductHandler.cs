@@ -11,13 +11,13 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQ
 {
     public class GetProductHandler : IRequestHandler<GetProductQuery, Response<ProductDto>>
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IProductsRepository _productRepository;
         private readonly IMapper _mapper;
         private readonly IMarketingApi _marketingApi;
         private readonly IAppCache _lazyCache;
-        public GetProductHandler(IUnitOfWork unitOfWork, IMapper mapper, IMarketingApi marketingApi, IAppCache cache)
+        public GetProductHandler(IProductsRepository productRepository, IMapper mapper, IMarketingApi marketingApi, IAppCache cache)
         {
-            _unitOfWork = unitOfWork;
+            _productRepository = productRepository;
             _mapper = mapper;
             _marketingApi = marketingApi;
             _lazyCache = cache;
@@ -26,7 +26,7 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Queries.GetProductQ
         {
             var response = new Response<ProductDto>();
 
-            var product = await _unitOfWork.Products.GetAsync(request.ProductId);
+            var product = await _productRepository.GetAsync(request.ProductId);
             response.Data = _mapper.Map<ProductDto>(product);
             response.Message = "Elemento no encontrado!!!";
 
