@@ -64,7 +64,7 @@ namespace Tektonlabs.Ecommerce.WebApi.Controllers.v1
         {
             var customerDto = await _mediator.Send(new GetProductQuery(id));
             if (customerDto.Data == null)
-                return NotFound(customerDto.Message);
+                return NotFound(customerDto);
 
             command = command with { ProductId = id };
             var response = await _mediator.Send(command);

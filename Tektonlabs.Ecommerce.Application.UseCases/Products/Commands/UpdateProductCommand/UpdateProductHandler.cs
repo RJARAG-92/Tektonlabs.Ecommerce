@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using MediatR;
+using Tektonlabs.Ecommerce.Application.DTO;
 using Tektonlabs.Ecommerce.Application.Interface.Persistence;
 using Tektonlabs.Ecommerce.Common;
 using Tektonlabs.Ecommerce.Domain.Entities;
@@ -28,6 +29,7 @@ namespace Tektonlabs.Ecommerce.Application.UseCases.Products.Commands.UpdateProd
 
             var product = _mapper.Map<Product>(request);
             response.Data = await _unitOfWork.Products.UpdateAsync(product);
+            response.Message = "Elemento no encontrado!!!";
             if (response.Data)
             {
                 response.IsSuccess = true;

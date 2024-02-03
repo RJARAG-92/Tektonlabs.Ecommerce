@@ -46,7 +46,7 @@ En la siguiente figura se presenta el diseño de la solución en .NET Core 8 bas
  
 Esta arquitectura permite realizar cambios importantes en la aplicación, sin grandes impactos. Además, permite cambiar el framework implementado en caso de ser necesario, ya que sus componentes están altamente desacoplado, o cambiar la base de datos o agregar alguna otra.
 
-En la siguiente figura se evidencia la implementación la arquitectura propuesta en .NET Core 8, estructurado la solución en N-capas.
+En la siguiente figura se evidencia la implementación la arquitectura propuesta en .NET Core 8, estructurado en N-capas.
 
 <p  align="center" href="https://freeimage.host/i/J0JkypS"><img style="width:90%; text-align: center;" src="https://iili.io/J0dR9EJ.png" alt="ImplementacionCleanArchitectureNetCore" border="0"></p>
 
@@ -116,6 +116,9 @@ Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar
 4. Compilar la solución.
 
 5. Iniciar depuración con IIS Express o Docker (F5), y esperar que levante el navegador con el swagger.
+
+<p  align="center" href="https://iili.io/J0W3qVp.png"><img style="width:100%; text-align: center;" src="https://iili.io/J0W3qVp.png" alt="Run" border="0"></p>
+ 
 
 6. Revisar la documentacion de la api con swagger, para url: http://localhost:49173/swagger/index.html. Tener en consideración el puerto, para nuestro caso esta configurardo para usar el puerto 49173.
 
